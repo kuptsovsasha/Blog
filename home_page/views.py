@@ -1,11 +1,16 @@
 from datetime import timezone
 
 from django.shortcuts import render
-from django.views.generic import ListView
 
-def home_page(request):
+from django.views import View
 
-    return render(request, '_page.html')
+class HomeView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            'home_page/home.html'
+        )
 
 
 
